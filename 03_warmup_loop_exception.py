@@ -8,7 +8,7 @@ Re-prompt until a valid number is entered
 
 
 def main():
-
+    age = 0
     valid_input = False
     while not valid_input:
         try:
@@ -28,12 +28,12 @@ def main():
 
 def is_even(number):
     return number % 2 == 0
-    # if number % 2 == 0:
-    #     return True
-    # else:
-    #     return False
+
+
+def test_is_even():
+    for i in range(5):
+        print("{} is {}".format(i, is_even(i)))
+
 
 main()
 
-# for i in range(5):
-#     print("{} is {}".format(i, is_even(i)))
