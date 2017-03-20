@@ -29,6 +29,11 @@ def main():
 def is_even(number):
     return number % 2 == 0
 
+    # if number % 2 == 0:
+    #     return True
+    # else:
+    #     return False
+
 
 def test_is_even():
     for i in range(5):
@@ -36,4 +41,4 @@ def test_is_even():
 
 
 main()
-
+# test_is_even()
