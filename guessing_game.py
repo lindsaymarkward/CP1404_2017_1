@@ -34,7 +34,10 @@ def main():
         print(repr(line))
 
     out_file = open("test.txt", "w")
-    print(line, file=out_file)
+    try:
+        print(line, file=out_file)
+    except NameError:
+        pass
     in_file.close()
     out_file.close()
 
