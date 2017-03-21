@@ -14,7 +14,7 @@ Just use "? " as the prompt for now
 #     number = int(input(PROMPT))
 # print("You got it!")
 
-s = "Hello world"
+# s = "Hello world"
 # for i in range(len(s)):
 #     print(i)
 #
@@ -24,14 +24,19 @@ s = "Hello world"
 # for i, char in enumerate(s):
 #     print("At index {:2} is {:8}".format(i, char))
 
-in_file = open("age_test.py", 'r')
-# text = in_file.readline()
-throw_away = in_file.readline()
-for line in in_file:
-    line = line.strip('\n')
-    print(repr(line))
 
-out_file = open("test.txt", "w")
-print(line, file=out_file)
-in_file.close()
-out_file.close()
+def main():
+    in_file = open("age_test.py", 'r')
+    # text = in_file.readline()
+    in_file.readline()
+    for line in in_file:
+        line = line.strip('\n')
+        print(repr(line))
+
+    out_file = open("test.txt", "w")
+    print(line, file=out_file)
+    in_file.close()
+    out_file.close()
+
+
+main()
