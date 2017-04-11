@@ -1,9 +1,10 @@
+
 """
 Ask the user to guess a number between 1 and 10 and keep asking
 until they get it right.
 Use a constant for the secret number
-Just use "? " as the prompt for now
-"""
+Just use "? " as the prompt for now"""
+
 # PROMPT = '?: '
 # SECRET_NUMBER = 0
 #
@@ -26,9 +27,11 @@ Just use "? " as the prompt for now
 
 
 def main():
+    """ Guessing game main """
     in_file = open("age_test.py", 'r')
     # text = in_file.readline()
     in_file.readline()
+    line = ""
     for line in in_file:
         line = line.strip('\n')
         print(repr(line))
