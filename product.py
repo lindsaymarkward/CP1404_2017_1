@@ -1,6 +1,11 @@
-"""..."""
-
-
+"""
+Do this now (in pairs or threes):
+Write a ProductList class that encapsulates a list of Products
+Printing it should display the products nicely
+Write methods for: add(Product), remove(Product),
+total() -> float (get total price)
+get_by_name(name) -> Product
+"""
 class Product:
     def __init__(self, name="", price=0.0, is_on_sale=False):
         self.name = name
