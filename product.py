@@ -6,6 +6,9 @@ Write methods for: add(Product), remove(Product),
 total() -> float (get total price)
 get_by_name(name) -> Product
 """
+# Now: Write a FoodItem class that extends Product meaningfully
+
+
 class Product:
     def __init__(self, name="", price=0.0, is_on_sale=False):
         self.name = name
@@ -17,27 +20,44 @@ class Product:
         return "{} ${:.2f}{}.".format(self.name, self.price, on_sale_string)
 
     def put_on_sale(self, discount):
+        # discount is specified as decimal, 0.31 = 31%
         self.is_on_sale = True
         self.price -= self.price * discount
 
-# p = Product("Phone", 340)
-# print(p)
-# p2 = Product("Taco", 8.7, True)
-# print(p2)
+    def __add__(self, other):
+        name = self.name + ' ' + other.name
+        price = self.price + other.price
+        return Product(name, price)
 
-# print(p, type(p))
-# print(p.__eq__(Product()))
+    def __lt__(self, other):
+        return self.price < other.price
 
-products = [Product("Phone", 200, False),
-            Product("PC", 1420.95, False),
-            Product("Plant", 24.5, True),
-            Product('Bottle', 420.95, True)]
+    def __getitem__(self, item):
+        return self.name * item
 
-for product in products:
-    print(product)
+def run_tests():
+    p1 = Product("Phone", 340)
+    p2 = Product("Taco", 8.7, True)
+    print(p1, p2)
+    p3 = p2 + p1
+    print(p3)
+    print(p1 < p2)
+    print(p1[7])
 
-products[0].put_on_sale(.3)
-print(products[0])
 
-on_sale_products = [product.name for product in products if product.is_on_sale]
-print(on_sale_products)
+    # products = [Product("Phone", 200, False),
+    #             Product("PC", 1420.95, False),
+    #             Product("Plant", 24.5, True),
+    #             Product('Bottle', 420.95, True)]
+    #
+    # for product in products:
+    #     print(product)
+    #
+    # products[0].put_on_sale(.3)
+    # print(products[0])
+    #
+    # on_sale_products = [product.name for product in products if product.is_on_sale]
+    # print(on_sale_products)
+
+if __name__ == '__main__':
+    run_tests()
